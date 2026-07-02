@@ -105,9 +105,24 @@
             border-bottom: 2px solid #366284;
             color: #366284;
         }
+        /* Scroll-reveal: linkerkolommen komen van links, rechterkolommen van rechts */
+        @media (prefers-reduced-motion: no-preference) {
+            .reveal-enabled .reveal {
+                opacity: 0;
+                transition: opacity 0.8s ease, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .reveal-enabled .reveal-left { transform: translateX(-90px); }
+            .reveal-enabled .reveal-right { transform: translateX(90px); }
+            .reveal-enabled .reveal-up { transform: translateY(40px); }
+            .reveal-enabled .reveal.is-visible {
+                opacity: 1;
+                transform: none;
+            }
+        }
     </style>
+<script>document.documentElement.classList.add('reveal-enabled');</script>
 </head>
-<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<body class="overflow-x-hidden bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
 <header class="w-full top-0 sticky bg-background z-50 border-b border-surface-variant/60">
 <nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto transition-all ease-in-out duration-200">
@@ -166,7 +181,7 @@
 <section class="project-item" data-category="residentieel">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-<div class="md:col-span-7 relative group cursor-pointer">
+<div class="reveal reveal-left md:col-span-7 relative group cursor-pointer">
 <div class="aspect-[4/5] bg-surface-container-low overflow-hidden">
 <img alt="Design keuken in mat zwart met koperkleurige details" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projecten/12-keuken-mat-zwart-koperkleur-details.jpg"/>
 </div>
@@ -175,7 +190,7 @@
 <img alt="Mat zwart keukeneiland met granieten werkblad" class="w-full h-full object-cover" src="images/projecten/21-mat-zwart-keukeneiland-met-graniet-werkblad.jpg"/>
 </div>
 </div>
-<div class="md:col-span-4 md:col-start-9 mt-8 md:mt-0">
+<div class="reveal reveal-right md:col-span-4 md:col-start-9 mt-8 md:mt-0">
 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Maatwerk keuken</span>
 <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">Design keuken mat zwart</h2>
 <a class="inline-flex items-center space-x-2 text-primary hover:text-on-background transition-colors group" href="#">
@@ -190,7 +205,7 @@
 <section class="project-item" data-category="zakelijk">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-<div class="md:col-span-4 mt-8 md:mt-0 order-2 md:order-1">
+<div class="reveal reveal-left md:col-span-4 mt-8 md:mt-0 order-2 md:order-1">
 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">In samenwerking met MCB</span>
 <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">Bedrijfspantry</h2>
 <a class="inline-flex items-center space-x-2 text-primary hover:text-on-background transition-colors group" href="#">
@@ -198,7 +213,7 @@
 <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
 </a>
 </div>
-<div class="md:col-span-7 md:col-start-6 relative group cursor-pointer order-1 md:order-2">
+<div class="reveal reveal-right md:col-span-7 md:col-start-6 relative group cursor-pointer order-1 md:order-2">
 <div class="aspect-video bg-surface-container-low overflow-hidden">
 <img alt="Bedrijfspantry MCB met open werkplekken" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projecten/28-pantry-mcb.jpg"/>
 </div>
@@ -213,16 +228,16 @@
 <section class="project-item" data-category="residentieel">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
-<div class="md:col-span-12 mb-8">
+<div class="reveal reveal-up md:col-span-12 mb-8">
 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Landelijk</span>
 <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Landelijke keuken &amp; bijkeuken</h2>
 </div>
-<div class="md:col-span-8 group cursor-pointer">
+<div class="reveal reveal-left md:col-span-8 group cursor-pointer">
 <div class="aspect-video bg-surface-container-low overflow-hidden">
 <img alt="Landelijke keuken met BarnWood Innsbruck fronten" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projecten/17-landelijke-keuken-fronten-barnwood-innsbruck.jpg"/>
 </div>
 </div>
-<div class="md:col-span-4 flex flex-col justify-between h-full">
+<div class="reveal reveal-right md:col-span-4 flex flex-col justify-between h-full">
 <div class="bg-surface-container-low overflow-hidden hidden md:block aspect-[4/5]">
 <img alt="Massief eiken bijkeuken" class="w-full h-full object-cover" src="images/projecten/18-massief-eiken-bijkeuken.jpg"/>
 </div>
@@ -240,12 +255,12 @@
 <section class="project-item" data-category="residentieel">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-<div class="md:col-span-5 relative group cursor-pointer">
+<div class="reveal reveal-left md:col-span-5 relative group cursor-pointer">
 <div class="aspect-[2/3] bg-surface-container-low overflow-hidden">
 <img alt="Badkamer met wandbekleding van eiken fineer latten" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projecten/20-wandbekleding-eiken-fineer-latten.jpg"/>
 </div>
 </div>
-<div class="md:col-span-6 md:col-start-7">
+<div class="reveal reveal-right md:col-span-6 md:col-start-7">
 <div class="mb-12">
 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Eiken fineer</span>
 <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">Maatwerk Badkamer</h2>
@@ -265,7 +280,7 @@
 <section class="project-item" data-category="residentieel">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-<div class="md:col-span-4 mt-8 md:mt-0 order-2 md:order-1">
+<div class="reveal reveal-left md:col-span-4 mt-8 md:mt-0 order-2 md:order-1">
 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Residentieel</span>
 <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">Maatwerk kasten &amp; ensuite</h2>
 <a class="inline-flex items-center space-x-2 text-primary hover:text-on-background transition-colors group" href="#">
@@ -273,7 +288,7 @@
 <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
 </a>
 </div>
-<div class="md:col-span-7 md:col-start-6 relative group cursor-pointer order-1 md:order-2 flex gap-4">
+<div class="reveal reveal-right md:col-span-7 md:col-start-6 relative group cursor-pointer order-1 md:order-2 flex gap-4">
 <div class="w-1/2 aspect-[3/4] bg-surface-container-low overflow-hidden mt-12">
 <img alt="Ensuite kasten met schuifdeuren" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projecten/03-ensuite-kasten-met-schuifdeuren.jpg"/>
 </div>
@@ -288,7 +303,7 @@
 <section class="project-item" data-category="hospitality">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-<div class="md:col-span-8 relative group cursor-pointer">
+<div class="reveal reveal-left md:col-span-8 relative group cursor-pointer">
 <div class="aspect-video bg-surface-container-low overflow-hidden">
 <img alt="Maatwerk bar in samenwerking met Van Ierland interieurbouw" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projecten/04-bar-in-samenwerking-met-van-ierland-interieurbouw.jpg"/>
 </div>
@@ -296,7 +311,7 @@
 <img alt="Detail van de maatwerk bar" class="w-full h-full object-cover" src="images/projecten/27-bar-in-samenwerking-met-van-ierland-interieurbouw.jpg"/>
 </div>
 </div>
-<div class="md:col-span-3 md:col-start-10 mt-16 md:mt-0">
+<div class="reveal reveal-right md:col-span-3 md:col-start-10 mt-16 md:mt-0">
 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">i.s.m. Van Ierland</span>
 <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">Boutique Bar</h2>
 <a class="inline-flex items-center space-x-2 text-primary hover:text-on-background transition-colors group" href="#">
@@ -344,6 +359,22 @@
             const filterBtns = document.querySelectorAll('.filter-btn');
             const projects = document.querySelectorAll('.project-item');
 
+            // Scroll-reveal: kolommen schuiven van hun eigen kant in beeld
+            const revealEls = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2, rootMargin: '0px 0px -28% 0px' });
+                revealEls.forEach(el => revealObserver.observe(el));
+            } else {
+                revealEls.forEach(el => el.classList.add('is-visible'));
+            }
+
             // Wissel de achtergrondkleur af tussen de zichtbare projecten
             const restripe = () => {
                 let i = 0;
@@ -372,12 +403,8 @@
 
                     projects.forEach(project => {
                         if (filterValue === 'all' || project.getAttribute('data-category') === filterValue) {
-                            project.style.display = 'block';
-                            project.style.opacity = '0';
-                            setTimeout(() => {
-                                project.style.transition = 'opacity 0.5s ease-in';
-                                project.style.opacity = '1';
-                            }, 50);
+                            project.style.display = '';
+                            project.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
                         } else {
                             project.style.display = 'none';
                         }
