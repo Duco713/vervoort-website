@@ -152,7 +152,7 @@
 </div>
 </section>
 <!-- Filter -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16">
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="flex flex-wrap gap-8 border-b border-surface-variant pb-2">
 <button class="filter-btn active font-label-caps text-label-caps uppercase tracking-widest pb-2 transition-colors hover:text-primary" data-filter="all">Alle</button>
 <button class="filter-btn font-label-caps text-label-caps uppercase tracking-widest text-secondary pb-2 transition-colors hover:text-primary" data-filter="residentieel">Residentieel</button>
@@ -161,9 +161,10 @@
 </div>
 </section>
 <!-- Project Grid -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32">
-<!-- Project 1: Luxe Keuken Amstelveen (Asymmetric, image left heavy) -->
-<article class="mb-32 project-item" data-category="residentieel">
+<div id="project-list">
+<!-- Project 1: Design keuken mat zwart -->
+<section class="project-item" data-category="residentieel">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
 <div class="md:col-span-7 relative group cursor-pointer">
 <div class="aspect-[4/5] bg-surface-container-low overflow-hidden">
@@ -183,9 +184,11 @@
 </a>
 </div>
 </div>
-</article>
-<!-- Project 2: Modern Kantoor Eindhoven (Asymmetric, text left, image right) -->
-<article class="mb-32 project-item" data-category="zakelijk">
+</div>
+</section>
+<!-- Project 2: Bedrijfspantry MCB -->
+<section class="project-item" data-category="zakelijk">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
 <div class="md:col-span-4 mt-8 md:mt-0 order-2 md:order-1">
 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">In samenwerking met MCB</span>
@@ -204,9 +207,11 @@
 </div>
 </div>
 </div>
-</article>
-<!-- Project 3: Renovatie Landhuis -->
-<article class="mb-32 project-item" data-category="residentieel">
+</div>
+</section>
+<!-- Project 3: Landelijke keuken & bijkeuken -->
+<section class="project-item" data-category="residentieel">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
 <div class="md:col-span-12 mb-8">
 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Landelijk</span>
@@ -229,9 +234,11 @@
 </div>
 </div>
 </div>
-</article>
+</div>
+</section>
 <!-- Project 4: Maatwerk Badkamer -->
-<article class="mb-32 project-item" data-category="residentieel">
+<section class="project-item" data-category="residentieel">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
 <div class="md:col-span-5 relative group cursor-pointer">
 <div class="aspect-[2/3] bg-surface-container-low overflow-hidden">
@@ -252,9 +259,11 @@
 </div>
 </div>
 </div>
-</article>
-<!-- Project 5: Totale Renovatie Appartement -->
-<article class="mb-32 project-item" data-category="residentieel">
+</div>
+</section>
+<!-- Project 5: Maatwerk kasten & ensuite -->
+<section class="project-item" data-category="residentieel">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
 <div class="md:col-span-4 mt-8 md:mt-0 order-2 md:order-1">
 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Residentieel</span>
@@ -273,9 +282,11 @@
 </div>
 </div>
 </div>
-</article>
-<!-- Project 6: Hospitality Bar Project -->
-<article class="project-item" data-category="hospitality">
+</div>
+</section>
+<!-- Project 6: Boutique Bar -->
+<section class="project-item" data-category="hospitality">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
 <div class="md:col-span-8 relative group cursor-pointer">
 <div class="aspect-video bg-surface-container-low overflow-hidden">
@@ -294,8 +305,9 @@
 </a>
 </div>
 </div>
-</article>
+</div>
 </section>
+</div>
 </main>
 <!-- Footer -->
 <footer class="w-full mt-20 bg-surface-container">
@@ -332,6 +344,18 @@
             const filterBtns = document.querySelectorAll('.filter-btn');
             const projects = document.querySelectorAll('.project-item');
 
+            // Wissel de achtergrondkleur af tussen de zichtbare projecten
+            const restripe = () => {
+                let i = 0;
+                projects.forEach(project => {
+                    if (project.style.display === 'none') return;
+                    project.classList.toggle('bg-surface-container', i % 2 === 0);
+                    project.classList.toggle('bg-background', i % 2 === 1);
+                    i++;
+                });
+            };
+            restripe();
+
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     filterBtns.forEach(b => {
@@ -358,6 +382,8 @@
                             project.style.display = 'none';
                         }
                     });
+
+                    restripe();
                 });
             });
         });
