@@ -1,0 +1,363 @@
+<!-- Vervoort Interieurbouw - Projecten Overzicht -->
+<!DOCTYPE html>
+
+<html lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onze Projecten - Vervoort Interieurbouw</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#b4aea7",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#cbe6ff",
+                        "tertiary-fixed-dim": "#ccc6be",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#625e58",
+                        "surface-container-low": "#f4f3f1",
+                        "primary-fixed-dim": "#a0cbf1",
+                        "surface-variant": "#e3e2e0",
+                        "on-primary-fixed-variant": "#1b4a6b",
+                        "on-background": "#1a1c1a",
+                        "surface-container": "#efeeeb",
+                        "on-primary-container": "#154666",
+                        "inverse-on-surface": "#f2f1ee",
+                        "secondary": "#5c5f62",
+                        "tertiary-fixed": "#e8e1da",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#4a4641",
+                        "inverse-primary": "#a0cbf1",
+                        "on-error-container": "#93000a",
+                        "outline": "#72787e",
+                        "secondary-fixed": "#e1e2e6",
+                        "surface-dim": "#dbdad7",
+                        "outline-variant": "#c2c7ce",
+                        "on-surface-variant": "#42474d",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#45423c",
+                        "on-secondary-container": "#606366",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#001e30",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "surface-tint": "#366284",
+                        "surface-container-highest": "#e3e2e0",
+                        "on-surface": "#1a1c1a",
+                        "primary": "#366284",
+                        "on-tertiary-fixed": "#1e1b17",
+                        "primary-container": "#89b4d9",
+                        "inverse-surface": "#2f312f",
+                        "on-secondary-fixed": "#191c1f",
+                        "secondary-fixed-dim": "#c5c6ca",
+                        "surface-bright": "#faf9f6",
+                        "surface-container-high": "#e9e8e5",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#dee0e3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#faf9f6",
+                        "background": "#faf9f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "margin-mobile": "24px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filter-btn.active {
+            border-bottom: 2px solid #366284;
+            color: #366284;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky bg-background z-50 border-b border-surface-variant/60">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto transition-all ease-in-out duration-200">
+<a class="flex items-center shrink-0" href="index.html" aria-label="Vervoort Interieurbouw - home">
+<img src="images/logo-vervoort.png" alt="Vervoort Interieurbouw" class="h-8 md:h-9 w-auto"/>
+</a>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-body-md text-body-md text-primary border-b border-primary pb-1 hover:text-primary transition-colors duration-300" href="projecten.html">Projecten</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300" href="index.html#diensten">Diensten</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300" href="index.html#expertise">Over ons</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300" href="index.html#contact">Contact</a>
+</div>
+<a class="hidden md:inline-block bg-on-background text-on-primary px-8 py-3 rounded hover:bg-primary transition-colors font-label-caps text-label-caps uppercase tracking-widest" href="index.html#contact">
+                Offerte aanvragen
+            </a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-background" id="menu-toggle" aria-label="Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</nav>
+<!-- Mobile Menu -->
+<div class="hidden md:hidden flex-col gap-4 px-margin-mobile pb-6 bg-background border-t border-surface-variant/60" id="mobile-menu">
+<a class="font-body-md text-body-md text-primary" href="projecten.html">Projecten</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="index.html#diensten">Diensten</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="index.html#expertise">Over ons</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="index.html#contact">Contact</a>
+<a class="mt-2 inline-block bg-on-background text-on-primary px-8 py-3 rounded text-center font-label-caps text-label-caps uppercase tracking-widest w-full" href="index.html#contact">Offerte aanvragen</a>
+</div>
+</header>
+<main>
+<!-- Introductie -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 pb-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-1 md:col-span-8">
+<h1 class="font-display-lg text-display-lg text-on-background mb-8">ONZE PROJECTEN</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl leading-relaxed">
+                        Ontdek een selectie van onze meest recente realisaties. Elk project is een toonbeeld van ons vakmanschap, waarbij hoogwaardige materialen en compromisloos oog voor detail samenkomen in tijdloze interieurs. Van luxueuze residenties tot representatieve zakelijke omgevingen.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Filter -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16">
+<div class="flex flex-wrap gap-8 border-b border-surface-variant pb-2">
+<button class="filter-btn active font-label-caps text-label-caps uppercase tracking-widest pb-2 transition-colors hover:text-primary" data-filter="all">Alle</button>
+<button class="filter-btn font-label-caps text-label-caps uppercase tracking-widest text-secondary pb-2 transition-colors hover:text-primary" data-filter="residentieel">Residentieel</button>
+<button class="filter-btn font-label-caps text-label-caps uppercase tracking-widest text-secondary pb-2 transition-colors hover:text-primary" data-filter="zakelijk">Zakelijk</button>
+<button class="filter-btn font-label-caps text-label-caps uppercase tracking-widest text-secondary pb-2 transition-colors hover:text-primary" data-filter="hospitality">Hospitality</button>
+</div>
+</section>
+<!-- Project Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32">
+<!-- Project 1: Luxe Keuken Amstelveen (Asymmetric, image left heavy) -->
+<article class="mb-32 project-item" data-category="residentieel">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 relative group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img alt="Luxe Keuken Amstelveen overzicht" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLs6WaPR1R_3NcBSkJGLVhe9jLEUM1Jq98ZbT2PnDhjmDbWZpkkSYBqj35AJ8R-are1tpkT9Sn7GLMiWFFVGbm6x37GI-sYTJ5AQ-58wUabhtwJmJ-cyZetlumMWsImrejPT3Ysw89xHR6FIYmdJP7kcW8Y878HsNF0YlbUKQsdK9bUTxUiHRuQ0YR_WzlvCHF6lkuLfWcuPULc-uAK13SuktpwY5jn3879__eR1kWz7ByMWM8mP0zbD3GU"/>
+</div>
+<!-- Absolute positioned smaller image for moodboard effect -->
+<div class="hidden md:block absolute -right-16 -bottom-16 w-64 h-64 border-8 border-background shadow-2xl z-10 overflow-hidden">
+<img alt="Detail Luxe Keuken Amstelveen" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvkfmF6BDgOJnCwr4QrU1aOzHNtRRlVEL88QoCD4S_DSNeixaiewsaO44lqS_MkvpbopNSQq_whFIv2woYP3DEDfp4Cu5pe2vSmFTfXA4hRw7WX3Ab-7FNwtEc9kOZwReYfMAvuv6ezZJpPUG0fAir-N6P0VMAMqRsTl6Wg32xSRbiMf9hKxPyUpy3SNPpCb4IZFqcnR9Rg3T-nxuTnML97nvzzCat58ZBhydzs5jeRqipcm3stMzC6EGaS"/>
+</div>
+</div>
+<div class="md:col-span-4 md:col-start-9 mt-8 md:mt-0">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Amstelveen</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">Luxe Keuken</h2>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-on-background transition-colors group" href="#">
+<span class="font-body-md text-body-md font-semibold border-b border-primary group-hover:border-on-background transition-colors pb-1">Bekijk Project</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Project 2: Modern Kantoor Eindhoven (Asymmetric, text left, image right) -->
+<article class="mb-32 project-item" data-category="zakelijk">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-4 mt-8 md:mt-0 order-2 md:order-1">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Eindhoven</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">Modern Kantoor</h2>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-on-background transition-colors group" href="#">
+<span class="font-body-md text-body-md font-semibold border-b border-primary group-hover:border-on-background transition-colors pb-1">Bekijk Project</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="md:col-span-7 md:col-start-6 relative group cursor-pointer order-1 md:order-2">
+<div class="aspect-video bg-surface-container-low overflow-hidden">
+<img alt="Modern Kantoor Eindhoven" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsOM6c0B7pDVnWD7WXvunnJWW9WkgoW3zHWeQMh6VoCnlpbSyVPKBh3PoSt3e-HLxV-FN1pAGEE3aYZTgQor12NkxT9Wwb6KPZHBYJqGEqV6BAShVpt-sN2boAL1P4-rj1eJxLgD4k4Q-uDNMQYM6vIKTBIdBiyHcOKPxmdNHlR4HS7CZi1l1BlLCUDqyvjgkkBlW8jfSisskMt3dFFs0c688wFQ9BZ8HoTBdTqMR5VYRc9igq9LPUXnc33"/>
+</div>
+<div class="hidden md:block absolute -left-16 -top-16 w-56 aspect-[3/4] border-8 border-background shadow-2xl z-10 overflow-hidden">
+<img alt="Detail Modern Kantoor Eindhoven" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtzaCLvzHTjajhPBJfYSc9WxRK4wcgLJ763Fh3cahnlt0d0GlxWjXihaC92kds4_2Oim3mblajAbwL5ZexpKIn-agwA9PCPCIkFj3gb5bZuWaTr6SulnctEOkVYOCVcDLIPDShFUv6tgAG4B3BRr8JZMITPvjirxCIlgJWD7FZww_wWiM0TQDdJKeE8yrTK2cimbAsq67SlMOHSqKmbcEUVYQsZ-ARaUsAA5bAyeA44ZqaOieU2Ky7qUS_j"/>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 3: Renovatie Landhuis -->
+<article class="mb-32 project-item" data-category="residentieel">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<div class="md:col-span-12 mb-8">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Locatie op aanvraag</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Renovatie Landhuis</h2>
+</div>
+<div class="md:col-span-8 group cursor-pointer">
+<div class="aspect-video bg-surface-container-low overflow-hidden">
+<img alt="Renovatie Landhuis" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLupxzYVg5vlDWHzUPOlLn3RjZacTQ8b-YNvIvtrc2LtA9K_zi5rp7grYaS957NcTyVknJzFe-q9SZzA_dcqY_3cpAEeO-Nu8Gt7x05Sw7j8orIuOaFzUpbFtVVPeG0eCA64VlOGayuviclx9RWZcunW9tMj6fQDZudXb_pPIzJaYLSIV3ARnLS2wOlmJMJn0idIjAx1OrldlNrlFkMxNgY52ZqfTuYPtKrUGes1PUX7dhVQVLe9qs7oBYm7"/>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col justify-between h-full">
+<div class="bg-surface-container-low overflow-hidden hidden md:block aspect-[4/5]">
+<img alt="Detail Landhuis" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLv8lZjxSK0LQ8P4D18gCQ4ZjRsVq1ieDUeJ1751p4qtiVEpMk0Yxf3jbiddLVk0TnoL2n-cRfeVBwBMliwg1CgYCqBy3ILXfX_rfYSXVvy4rUWchVM1_D7G-g9LHCq8zh6LoLfNfJoczwWD81EnIzxH0Oi3ll9DEyrEcv7LxWXuqqYbfVY0HjScvX5ZF6jQ-yzJ8aUVhbHVXZ8DE0V4A0zXSD8ashnvZxjGYvq8AtKjIFh8fnW4qBSIxeM"/>
+</div>
+<div class="mt-8">
+<a class="inline-flex items-center space-x-2 text-primary hover:text-on-background transition-colors group" href="#">
+<span class="font-body-md text-body-md font-semibold border-b border-primary group-hover:border-on-background transition-colors pb-1">Bekijk Project</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 4: Maatwerk Badkamer -->
+<article class="mb-32 project-item" data-category="residentieel">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 relative group cursor-pointer">
+<div class="aspect-[2/3] bg-surface-container-low overflow-hidden">
+<img alt="Maatwerk Badkamer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLuUmWXFNsY6Og9_AITHN01juPSyiZdPJHtq8kyyOX0pHPLv-kKpVlBkRCkLf86zpDdDlvI5wdrCOmZGZwr8HoSqUQrNcaYY-rdziW9CtDl2TSM163PVCZGDap3o5sxJpFsGXMpjT3WZrkg969XxaFvR-NDPZSpA841GwZzGySC4cEHokU2eTrK4UcN81un1f2YZ7U3RFZnYnejNA7h-bVuCWdYHG-Ro_2BWdq3L4V7BK7uG3BEQQx2Ke73n"/>
+</div>
+</div>
+<div class="md:col-span-6 md:col-start-7">
+<div class="mb-12">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Utrecht</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">Maatwerk Badkamer</h2>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-on-background transition-colors group" href="#">
+<span class="font-body-md text-body-md font-semibold border-b border-primary group-hover:border-on-background transition-colors pb-1">Bekijk Project</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="aspect-[3/2] bg-surface-container-low overflow-hidden mt-8">
+<img alt="Detail Maatwerk Badkamer" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvq-6V_Me4D2I914Ani4AKpf35ZQFrvuX_KQOKf9m6FVBR5Md16t9BxGLQ2Tfcc9wdFiB6k1doe4J96ns0uYXFHuU7azMLAbuBU8Z-NvJmQjfi17lftxsRMqVVvDCRGSadNX9fxuzLnd9xDssnwlix_YrdgTpfn1ZblIhDzUIMAxEqFzI0VYhU_ne6Hs_aSfo8gaQKbEVxoxqyjz8nhWWu670C0w_5mDxWwaJv6Zpf_Mw6R0-Aoq9bdKtQ"/>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 5: Totale Renovatie Appartement -->
+<article class="mb-32 project-item" data-category="residentieel">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-4 mt-8 md:mt-0 order-2 md:order-1">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Amsterdam</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">Totale Renovatie Appartement</h2>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-on-background transition-colors group" href="#">
+<span class="font-body-md text-body-md font-semibold border-b border-primary group-hover:border-on-background transition-colors pb-1">Bekijk Project</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="md:col-span-7 md:col-start-6 relative group cursor-pointer order-1 md:order-2 flex gap-4">
+<div class="w-1/2 aspect-[3/4] bg-surface-container-low overflow-hidden mt-12">
+<img alt="Renovatie Appartement" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLui1XVy5M9LM76z65PKxK0izWahrojvcK3WBRt6TPtpTxFpZcjmE_3pMfZDjOW_oLhl02HAgZOOoRdDtrz373WTu9QhxeymnQeYPzU4QqS0eyvLNk2r1l3CxZ4_gbRmXyhnXF7OJVTmxJ0DOLxZwFIZZjRIRIJL5VpIQ_xOVKZzi8aZdhVkGaalFR5T2toJAGmnWUpbvtHC3KHvtuFWg8AzhmXOcVxGZCHASmtf1qbsPHIN9NZLVGKRofM"/>
+</div>
+<div class="w-1/2 aspect-[4/3] bg-surface-container-low overflow-hidden self-start">
+<img alt="Detail Renovatie Appartement" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsHMwBC0GhaWR5Cn-vu-kfdUjxQV1G23Wb34su-cyoMwxHHFQVz3qRIUN4szQnmTSHSbNNWSJbxbU2MkC_TvrO5blWOAbDzUUHg68CZfNGxjKQnIX505qXcWIcbegpSFM_nh14NCF1AQ4lyMTl2-jm9eBjcBZ5TliNWum86xznB1xV6vjUh6jNhZ57wY4Z2jqdJqK6K0wjZKTux2uzulM0QZTBC8et-Py3OS2sOJ3kGFFDzj2vygaEkrUjk"/>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 6: Hospitality Bar Project -->
+<article class="project-item" data-category="hospitality">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-8 relative group cursor-pointer">
+<div class="aspect-video bg-surface-container-low overflow-hidden">
+<img alt="Hospitality Bar Project overzicht" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLtZNqIfuBCW7GIy3zrP0AzzgQnoXrW-EJ1oReL_xeumPHm9YQkgDUBms_o_gG51LVsf3Q2sg9ohlcmou5k5vR5dTL3AgFUifc3hPB50QA8LeSBj6b3KIJnoatTFmt1UUwz499um1o25-dlKYfMDqZzIz1senuea8seh_3uNKfWHOscDrkt5WHzzVl3JJqka0fY6EhysGApzYGlHJgClCAbal4GwHvwNeienSZhgy9YnQaxyjnoZ3w2zZ74t"/>
+</div>
+<div class="hidden md:block absolute -right-12 -bottom-12 w-64 aspect-[3/4] border-8 border-background shadow-2xl z-10 overflow-hidden">
+<img alt="Detail Hospitality Bar Project" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLuXr4mumxYWaOj3alx30Ugg5rTE_Po__Hlx26UR-YuoDy8R6Lx2vW3VsB-UGXpUACDbi0wMP78XPXxbFkTwqebqocxjnBjTOTeQcp0LjjyGykYQWSzzS7TdtOrYB2I2y5Oi55SV9lmXOvjo2VhICn0b7CzqIA0ctmhsrWwJi-qqPRizKMG8mpeUB-xnlJJj1i94Ug5aVEp0a4Kj1x7gVeEzlaHI6yrT2v3RAQXYVPEu466OdelQa7wpG4tY"/>
+</div>
+</div>
+<div class="md:col-span-3 md:col-start-10 mt-16 md:mt-0">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Rotterdam</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">Boutique Bar</h2>
+<a class="inline-flex items-center space-x-2 text-primary hover:text-on-background transition-colors group" href="#">
+<span class="font-body-md text-body-md font-semibold border-b border-primary group-hover:border-on-background transition-colors pb-1">Bekijk Project</span>
+<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-surface-container">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-mobile md:px-margin-desktop py-16 max-w-container-max mx-auto">
+<div class="flex flex-col space-y-6">
+<a class="inline-block" href="index.html" aria-label="Vervoort Interieurbouw - home">
+<img src="images/logo-vervoort.png" alt="Vervoort Interieurbouw" class="h-11 w-auto"/>
+</a>
+<p class="font-body-md text-body-md text-secondary">
+                    © 2024 Vervoort Interieurbouw. Vakmanschap in interieur.
+                </p>
+</div>
+<div class="flex flex-col md:items-end space-y-4">
+<nav class="flex flex-col space-y-3 md:items-end">
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Algemene Voorwaarden</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+</nav>
+</div>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+
+            // Filter logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projects = document.querySelectorAll('.project-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'text-primary');
+                        b.classList.add('text-secondary');
+                        b.style.borderBottom = 'none';
+                    });
+
+                    btn.classList.add('active', 'text-primary');
+                    btn.classList.remove('text-secondary');
+                    btn.style.borderBottom = '2px solid #366284';
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    projects.forEach(project => {
+                        if (filterValue === 'all' || project.getAttribute('data-category') === filterValue) {
+                            project.style.display = 'block';
+                            project.style.opacity = '0';
+                            setTimeout(() => {
+                                project.style.transition = 'opacity 0.5s ease-in';
+                                project.style.opacity = '1';
+                            }, 50);
+                        } else {
+                            project.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body></html>

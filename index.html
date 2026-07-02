@@ -1,0 +1,375 @@
+<!-- Vervoort Interieurbouw - Redesign Home -->
+<!DOCTYPE html>
+
+<html class="light" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vervoort Interieurbouw - Vakmanschap in elk detail</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#606366",
+                        "on-primary-container": "#154666",
+                        "surface-container-high": "#e9e8e5",
+                        "on-primary-fixed": "#001e30",
+                        "on-secondary-fixed": "#191c1f",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#625e58",
+                        "on-primary": "#ffffff",
+                        "secondary": "#5c5f62",
+                        "surface-tint": "#366284",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e8e1da",
+                        "primary-container": "#89b4d9",
+                        "on-tertiary-fixed-variant": "#4a4641",
+                        "primary": "#366284",
+                        "secondary-fixed": "#e1e2e6",
+                        "outline-variant": "#c2c7ce",
+                        "on-tertiary-container": "#45423c",
+                        "on-surface-variant": "#42474d",
+                        "inverse-surface": "#2f312f",
+                        "tertiary-fixed-dim": "#ccc6be",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#72787e",
+                        "background": "#faf9f6",
+                        "surface-container-low": "#f4f3f1",
+                        "secondary-container": "#dee0e3",
+                        "on-surface": "#1a1c1a",
+                        "surface-variant": "#e3e2e0",
+                        "surface-container": "#efeeeb",
+                        "tertiary-container": "#b4aea7",
+                        "surface-bright": "#faf9f6",
+                        "on-tertiary-fixed": "#1e1b17",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dbdad7",
+                        "on-background": "#1a1c1a",
+                        "surface-container-highest": "#e3e2e0",
+                        "primary-fixed": "#cbe6ff",
+                        "inverse-on-surface": "#f2f1ee",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#a0cbf1",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#1b4a6b",
+                        "surface": "#faf9f6",
+                        "secondary-fixed-dim": "#c5c6ca",
+                        "inverse-primary": "#a0cbf1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "margin-desktop": "80px",
+                        "margin-mobile": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Ambient shadow utility as per style guide */
+        .ambient-shadow {
+            box-shadow: 0 10px 40px rgba(35, 38, 41, 0.04);
+        }
+
+        html { scroll-behavior: smooth; }
+        section[id], header[id] { scroll-margin-top: 96px; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- 1. HERO SECTIE met TopNavBar -->
+<header class="relative w-full h-screen min-h-[800px] flex flex-col" id="home">
+<!-- Achtergrond foto -->
+<div class="absolute inset-0 z-0">
+<img alt="Luxe op maat gemaakt interieur project door Vervoort Interieurbouw" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvZ5QJjfpn6FMI3aoHZ7f72PHMkYVSmGvtq5ZwEWRiqRa0ISCdPIYRxPZxqYhKqCln5ZSxWq6142HxuWXyV13AQb5-ihc9mgfa1LVqndTW86q9xQi8NQGSQohhvARFAblNaQPP7ZZLk1wadS6YU1inrd1X80SlwTIpltBf4W5LUbKp36LUKV8z5a36uWmn70Z_YV2Ttp99Tm7zt6n8j15gr2IthfIHxX-afF27NJ4pAb5VACQnifu3dN2La"/>
+<!-- Subtiele overlay voor leesbaarheid -->
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 inset-x-0 z-50 bg-transparent py-8 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a class="flex items-center shrink-0" href="#home" aria-label="Vervoort Interieurbouw - home">
+<img id="logo-light" src="images/logo-vervoort-light.png" alt="Vervoort Interieurbouw" class="h-8 md:h-9 w-auto"/>
+<img id="logo-dark" src="images/logo-vervoort.png" alt="Vervoort Interieurbouw" class="h-8 md:h-9 w-auto hidden"/>
+</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="nav-item text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-300" href="#diensten">Diensten</a>
+<a class="nav-item text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-300" href="#expertise">Over ons</a>
+<a class="nav-item text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-300" href="#portfolio">Portfolio</a>
+<a class="nav-item text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
+</div>
+<a class="nav-item hidden md:block font-label-caps text-label-caps text-white hover:text-primary transition-colors duration-300" href="tel:+31402027950">+31 (0) 40 2027950</a>
+</div>
+</nav>
+<!-- Hero Content -->
+<div class="relative z-10 flex-grow flex items-center justify-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="text-center w-full">
+<h1 class="font-display-lg text-display-lg text-on-primary tracking-tighter mix-blend-overlay opacity-90 w-full whitespace-nowrap overflow-hidden text-ellipsis md:text-[120px] lg:text-[180px] leading-none mb-8">
+                    VERVOORT
+                </h1>
+<div class="mt-12 flex justify-center">
+<a class="inline-flex items-center justify-center bg-inverse-surface text-on-primary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-primary transition-colors duration-300" href="#diensten">
+                        Ontdek de mogelijkheden
+                    </a>
+</div>
+</div>
+</div>
+</header>
+<!-- 2. ONZE DIENSTEN SECTIE -->
+<section class="bg-surface-container-low py-32 px-margin-mobile md:px-margin-desktop relative" id="diensten">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-5 flex flex-col justify-center">
+<div class="mb-16">
+<span class="font-label-caps text-label-caps text-primary block mb-4">01</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+                        ONZE DIENSTEN
+                    </h2>
+</div>
+<div class="flex flex-col gap-12">
+<div class="flex gap-6 items-start group">
+<span class="font-label-caps text-label-caps text-tertiary mt-2">01.</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Maatwerk Interieur</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Bespoke oplossingen die perfect aansluiten bij uw wensen en de architectuur van de ruimte.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start group">
+<span class="font-label-caps text-label-caps text-tertiary mt-2">02.</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Keukens</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">High-end keukens waar functionaliteit en esthetiek samenkomen in hoogwaardige materialen.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start group">
+<span class="font-label-caps text-label-caps text-tertiary mt-2">03.</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Totale Renovatie</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Van concept tot realisatie, een complete transformatie van uw leef- of werkomgeving.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 relative min-h-[600px] mt-16 md:mt-0">
+<div class="absolute right-0 top-0 w-3/4 h-3/4 ambient-shadow">
+<img alt="Detailfoto van maatwerk kastenwand met geïntegreerde verlichting" class="w-full h-full object-cover rounded" src="https://lh3.googleusercontent.com/aida/AP1WRLs6WaPR1R_3NcBSkJGLVhe9jLEUM1Jq98ZbT2PnDhjmDbWZpkkSYBqj35AJ8R-are1tpkT9Sn7GLMiWFFVGbm6x37GI-sYTJ5AQ-58wUabhtwJmJ-cyZetlumMWsImrejPT3Ysw89xHR6FIYmdJP7kcW8Y878HsNF0YlbUKQsdK9bUTxUiHRuQ0YR_WzlvCHF6lkuLfWcuPULc-uAK13SuktpwY5jn3879__eR1kWz7ByMWM8mP0zbD3GU"/>
+</div>
+<div class="absolute left-0 bottom-0 w-2/3 h-2/3 ambient-shadow mt-24">
+<img alt="Overzichtsfoto van een luxe, strak vormgegeven maatwerk keuken" class="w-full h-full object-cover rounded" src="https://lh3.googleusercontent.com/aida/AP1WRLu6zUUgcM_V7NHoKIPA-x3YOT5O2x4Hs-VW8pWXItzZ60yvwJq-q2p65rOqSPsd875ahEEIsGbFSV5EuMWlQODPv9shbstlWYQ60HOPWGggSF4xvF5wcgrjXyZpq8bbe1V19V2WbWfVYUeuRvxK7MvfXHLovr5jh_GBJIbksSDpToS_COm8BaSpTsEJ74gQnX-jAzFv3lAF10j-4WcqXrCOD2y1zzp8MOvxNGTJsagL6FBf7uGU0R-kplzx"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. OVER ONS SECTIE -->
+<section class="bg-background py-32 px-margin-mobile md:px-margin-desktop" id="expertise">
+<div class="max-w-container-max mx-auto">
+<div class="mb-24 md:w-1/2">
+<span class="font-label-caps text-label-caps text-primary block mb-4">02</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-8">
+                    OVER ONS
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Sinds 1998 staan wij garant voor vakmanschap, oog voor detail en het gebruik van de beste materialen. We creëren interieurs die de tand des tijds doorstaan, zowel in design als in kwaliteit.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-4 flex flex-col gap-16">
+<div class="border-l border-outline-variant pl-8">
+<span class="font-display-lg text-display-lg text-on-surface block mb-2">26</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Jaar Ervaring</span>
+</div>
+<div class="border-l border-outline-variant pl-8">
+<span class="font-display-lg text-display-lg text-on-surface block mb-2">300+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Gerealiseerde Projecten</span>
+</div>
+</div>
+<div class="md:col-span-8 grid grid-cols-2 gap-gutter mt-16 md:mt-0">
+<div class="aspect-[3/4] ambient-shadow">
+<img alt="Sfeervol detail van materiaalgebruik in een luxe slaapkamer interieur" class="w-full h-full object-cover rounded" src="https://lh3.googleusercontent.com/aida/AP1WRLvq-6V_Me4D2I914Ani4AKpf35ZQFrvuX_KQOKf9m6FVBR5Md16t9BxGLQ2Tfcc9wdFiB6k1doe4J96ns0uYXFHuU7azMLAbuBU8Z-NvJmQjfi17lftxsRMqVVvDCRGSadNX9fxuzLnd9xDssnwlix_YrdgTpfn1ZblIhDzUIMAxEqFzI0VYhU_ne6Hs_aSfo8gaQKbEVxoxqyjz8nhWWu670C0w_5mDxWwaJv6Zpf_Mw6R0-Aoq9bdKtQ"/>
+</div>
+<div class="aspect-[3/4] ambient-shadow translate-y-12">
+<img alt="Close-up van hoogwaardige afwerking van een maatwerk meubel" class="w-full h-full object-cover rounded" src="https://lh3.googleusercontent.com/aida/AP1WRLv8lZjxSK0LQ8P4D18gCQ4ZjRsVq1ieDUeJ1751p4qtiVEpMk0Yxf3jbiddLVk0TnoL2n-cRfeVBwBMliwg1CgYCqBy3ILXfX_rfYSXVvy4rUWchVM1_D7G-g9LHCq8zh6LoLfNfJoczwWD81EnIzxH0Oi3ll9DEyrEcv7LxWXuqqYbfVY0HjScvX5ZF6jQ-yzJ8aUVhbHVXZ8DE0V4A0zXSD8ashnvZxjGYvq8AtKjIFh8fnW4qBSIxeM"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. PORTFOLIO SECTIE -->
+<section class="bg-surface-container py-32 px-margin-mobile md:px-margin-desktop" id="portfolio">
+<div class="max-w-container-max mx-auto">
+<div class="mb-24 flex flex-col md:flex-row md:justify-between md:items-end gap-8">
+<div>
+<span class="font-label-caps text-label-caps text-primary block mb-4">03</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+                        ONS PORTFOLIO
+                    </h2>
+</div>
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 hover:text-on-surface hover:border-on-surface transition-colors inline-flex items-center gap-2" href="projecten.html">
+                    Bekijk alle projecten <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="flex flex-col gap-32">
+<!-- Project 1 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-4 order-2 md:order-1">
+<span class="font-label-caps text-label-caps text-tertiary block mb-4">01. Residentieel</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Luxe Keuken Amstelveen</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Een strakke, greeploze keuken ontworpen als het kloppende hart van de woning. Subtiele verlichting en donkere eiken accenten creëren een warme, minimalistische sfeer.</p>
+</div>
+<div class="md:col-span-8 order-1 md:order-2 grid grid-cols-2 gap-4">
+<div class="col-span-2 ambient-shadow">
+<img alt="Hoofdaanzicht van de luxe keuken in Amstelveen met donker kookeiland" class="w-full h-[400px] object-cover rounded" src="https://lh3.googleusercontent.com/aida/AP1WRLsOM6c0B7pDVnWD7WXvunnJWW9WkgoW3zHWeQMh6VoCnlpbSyVPKBh3PoSt3e-HLxV-FN1pAGEE3aYZTgQor12NkxT9Wwb6KPZHBYJqGEqV6BAShVpt-sN2boAL1P4-rj1eJxLgD4k4Q-uDNMQYM6vIKTBIdBiyHcOKPxmdNHlR4HS7CZi1l1BlLCUDqyvjgkkBlW8jfSisskMt3dFFs0c688wFQ9BZ8HoTBdTqMR5VYRc9igq9LPUXnc33"/>
+</div>
+<div class="ambient-shadow">
+<img alt="Detail van de materialen en kranen in de keuken" class="w-full h-[300px] object-cover rounded" src="https://lh3.googleusercontent.com/aida/AP1WRLui1XVy5M9LM76z65PKxK0izWahrojvcK3WBRt6TPtpTxFpZcjmE_3pMfZDjOW_oLhl02HAgZOOoRdDtrz373WTu9QhxeymnQeYPzU4QqS0eyvLNk2r1l3CxZ4_gbRmXyhnXF7OJVTmxJ0DOLxZwFIZZjRIRIJL5VpIQ_xOVKZzi8aZdhVkGaalFR5T2toJAGmnWUpbvtHC3KHvtuFWg8AzhmXOcVxGZCHASmtf1qbsPHIN9NZLVGKRofM"/>
+</div>
+<div class="ambient-shadow">
+<img alt="Zijaanzicht van het keukeneiland en de geïntegreerde kastenwand" class="w-full h-[300px] object-cover rounded" src="https://lh3.googleusercontent.com/aida/AP1WRLupxzYVg5vlDWHzUPOlLn3RjZacTQ8b-YNvIvtrc2LtA9K_zi5rp7grYaS957NcTyVknJzFe-q9SZzA_dcqY_3cpAEeO-Nu8Gt7x05Sw7j8orIuOaFzUpbFtVVPeG0eCA64VlOGayuviclx9RWZcunW9tMj6fQDZudXb_pPIzJaYLSIV3ARnLS2wOlmJMJn0idIjAx1OrldlNrlFkMxNgY52ZqfTuYPtKrUGes1PUX7dhVQVLe9qs7oBYm7"/>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-8 grid grid-cols-2 gap-4">
+<div class="ambient-shadow mt-12">
+<img alt="Sfeerbeeld van het moderne kantoor in Eindhoven met houten elementen" class="w-full h-[400px] object-cover rounded" src="https://lh3.googleusercontent.com/aida/AP1WRLsgbiZovcWY1nvFeo4RLbvvCb-Xu8Hiei3akvOgfFF9DC15lZqAYiYp1OTk8PVWyIEQOVTsdijRGrME5QKCfL_nQys36Gw2BfQxNSez2mFgVif_5UWKwohiPI4tCrfBcbEDSmTMqqfDSXe12XH268bYZDujxUyBJhG8tLLz4v0c3mlIYmJAW8Y8MmHmZclIq5XpVeAD1vB0FWRe2bslbdo_0wTuhsSImeQiDyWUhFTE6UzbKxpaq78E1yfE"/>
+</div>
+<div class="ambient-shadow">
+<img alt="Overzicht van de werkplekken met maatwerk bureaus" class="w-full h-[500px] object-cover rounded" src="https://lh3.googleusercontent.com/aida/AP1WRLtZNqIfuBCW7GIy3zrP0AzzgQnoXrW-EJ1oReL_xeumPHm9YQkgDUBms_o_gG51LVsf3Q2sg9ohlcmou5k5vR5dTL3AgFUifc3hPB50QA8LeSBj6b3KIJnoatTFmt1UUwz499um1o25-dlKYfMDqZzIz1senuea8seh_3uNKfWHOscDrkt5WHzzVl3JJqka0fY6EhysGApzYGlHJgClCAbal4GwHvwNeienSZhgy9YnQaxyjnoZ3w2zZ74t"/>
+</div>
+</div>
+<div class="md:col-span-4 ml-0 md:ml-12">
+<span class="font-label-caps text-label-caps text-tertiary block mb-4">02. Commercieel</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Modern Kantoor Eindhoven</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Een inspirerende werkomgeving waar akoestiek, functionaliteit en design hand in hand gaan. Maatwerk meubilair in lichte houtsoorten gecombineerd met industriële details.</p>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 order-2 md:order-1">
+<span class="font-label-caps text-label-caps text-tertiary block mb-4">03. Residentieel</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Renovatie Landhuis</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Een respectvolle renovatie waarbij authentieke elementen zijn behouden en aangevuld met hedendaags maatwerk voor een luxueus comfort.</p>
+</div>
+<div class="md:col-span-7 order-1 md:order-2 ambient-shadow">
+<img alt="Overzichtsfoto van de stijlvolle renovatie van een klassiek landhuis" class="w-full h-[600px] object-cover rounded" src="https://lh3.googleusercontent.com/aida/AP1WRLuK7knRQMjbokr6TnMtFgWtaw0yrANzzfU2Gl_UfpLsVOFSieOFOMHBjEVE_oF-V2e2m1W7ljmcKLKdHq7eefAHuMIvURaRsvRisJnV14AbJUOKccUQwdUgCpY4QudpwKucxrVgXX1eeOFG8m0jbg7fxin5RZ-wANXTct03k_nZR5SM2HB0lxAUB5DNSaMlMy2Rn3y9axsZIqssQsP1QXTYATJIkyYRZwpIg4IWyDofLPKA3YuK_PCrrFMh"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. FOOTER / CONTACT SECTIE -->
+<footer class="bg-surface-container dark:bg-surface-dim block w-full relative overflow-hidden" id="contact">
+<!-- Paginagrote afsluiting -->
+<div class="py-32 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter items-center max-w-container-max mx-auto border-b border-outline-variant/20">
+<div class="order-2 md:order-1 flex justify-center md:justify-start">
+<!-- Minimalistisch stijlelement placeholder -->
+<div class="w-64 h-80 bg-tertiary-fixed rounded ambient-shadow flex items-center justify-center p-8 relative">
+<div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiAvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIC8+Cjwvc3ZnPg==')]"></div>
+<span class="font-label-caps text-label-caps text-on-tertiary-fixed text-center z-10">Minimalistisch<br/>Stijlelement</span>
+</div>
+</div>
+<div class="order-1 md:order-2 text-center md:text-left">
+<h2 class="font-display-lg text-display-lg text-on-surface mb-12">
+                    HET WAARMAKEN VAN UW DROOMINTERIEUR
+                </h2>
+<div class="inline-block border-t border-primary pt-8">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Neem contact op</span>
+<a class="font-headline-lg text-headline-lg text-primary hover:text-on-surface transition-colors" href="tel:+31402027950">
+                        +31 (0) 40 2027950
+                    </a>
+</div>
+</div>
+</div>
+<!-- Standaard Footer Component -->
+<div class="flex flex-col gap-16 px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+<a class="inline-block" href="#home" aria-label="Vervoort Interieurbouw - home">
+<img src="images/logo-vervoort.png" alt="Vervoort Interieurbouw" class="h-11 w-auto"/>
+</a>
+<div class="flex flex-col md:flex-row gap-8">
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Algemene Voorwaarden</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+</div>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant border-t border-outline-variant/20 pt-8">
+                © 2024 Vervoort Interieurbouw. Vakmanschap in elk detail.
+            </div>
+</div>
+</footer>
+<!-- Script voor scroll interacties -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.querySelector('nav');
+            const logoLight = document.getElementById('logo-light');
+            const logoDark = document.getElementById('logo-dark');
+            const navItems = navbar.querySelectorAll('.nav-item');
+
+            const applyNavState = () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-background/90', 'backdrop-blur-md', 'ambient-shadow', 'py-4');
+                    navbar.classList.remove('bg-transparent', 'py-8');
+                    logoLight.classList.add('hidden');
+                    logoDark.classList.remove('hidden');
+                    navItems.forEach(el => {
+                        el.classList.remove('text-white');
+                        el.classList.add('text-on-surface');
+                    });
+                } else {
+                    navbar.classList.remove('bg-background/90', 'backdrop-blur-md', 'ambient-shadow', 'py-4');
+                    navbar.classList.add('bg-transparent', 'py-8');
+                    logoLight.classList.remove('hidden');
+                    logoDark.classList.add('hidden');
+                    navItems.forEach(el => {
+                        el.classList.add('text-white');
+                        el.classList.remove('text-on-surface');
+                    });
+                }
+            };
+
+            applyNavState();
+            window.addEventListener('scroll', applyNavState, { passive: true });
+        });
+    </script>
+</body></html>
