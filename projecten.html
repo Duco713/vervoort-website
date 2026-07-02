@@ -112,8 +112,10 @@
                 transition: opacity 0.8s ease, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
             }
             .reveal-enabled .reveal-left { transform: translateX(-90px); }
-            .reveal-enabled .reveal-right { transform: translateX(90px); }
+            .reveal-enabled .reveal-right { transform: translateX(90px); transition-delay: 0.12s; }
             .reveal-enabled .reveal-up { transform: translateY(40px); }
+            .reveal-enabled .reveal-delay-1 { transition-delay: 0.12s; }
+            .reveal-enabled .reveal-delay-2 { transition-delay: 0.24s; }
             .reveal-enabled .reveal.is-visible {
                 opacity: 1;
                 transform: none;
@@ -159,8 +161,8 @@
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 pb-16">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
 <div class="col-span-1 md:col-span-8">
-<h1 class="font-display-lg text-display-lg text-on-background mb-8">ONZE PROJECTEN</h1>
-<p class="font-body-lg text-body-lg text-secondary max-w-2xl leading-relaxed">
+<h1 class="reveal reveal-up reveal-now font-display-lg text-display-lg text-on-background mb-8">ONZE PROJECTEN</h1>
+<p class="reveal reveal-up reveal-now font-body-lg text-body-lg text-secondary max-w-2xl leading-relaxed">
                         Ontdek een selectie van onze meest recente realisaties. Elk project is een toonbeeld van ons vakmanschap, waarbij hoogwaardige materialen en compromisloos oog voor detail samenkomen in tijdloze interieurs. Van luxueuze residenties tot representatieve zakelijke omgevingen.
                     </p>
 </div>
@@ -168,7 +170,7 @@
 </section>
 <!-- Filter -->
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="flex flex-wrap gap-8 border-b border-surface-variant pb-2">
+<div class="reveal reveal-up reveal-now flex flex-wrap gap-8 border-b border-surface-variant pb-2">
 <button class="filter-btn active font-label-caps text-label-caps uppercase tracking-widest pb-2 transition-colors hover:text-primary" data-filter="all">Alle</button>
 <button class="filter-btn font-label-caps text-label-caps uppercase tracking-widest text-secondary pb-2 transition-colors hover:text-primary" data-filter="residentieel">Residentieel</button>
 <button class="filter-btn font-label-caps text-label-caps uppercase tracking-widest text-secondary pb-2 transition-colors hover:text-primary" data-filter="zakelijk">Zakelijk</button>
@@ -181,16 +183,16 @@
 <section class="project-item" data-category="residentieel">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-<div class="reveal reveal-left md:col-span-7 relative group cursor-pointer">
-<div class="aspect-[4/5] bg-surface-container-low overflow-hidden">
-<img alt="Design keuken in mat zwart met koperkleurige details" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projecten/12-keuken-mat-zwart-koperkleur-details.jpg"/>
+<div class="reveal reveal-left reveal-now md:col-span-7 relative group cursor-pointer">
+<div class="aspect-[4/3] bg-surface-container-low overflow-hidden">
+<img alt="Design keuken in mat zwart met koperkleurige details" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projecten/12-keuken-mat-zwart-koperkleur-details.jpg" fetchpriority="high"/>
 </div>
 <!-- Absolute positioned smaller image for moodboard effect -->
 <div class="hidden md:block absolute -right-16 -bottom-16 w-64 h-64 border-8 border-background shadow-2xl z-10 overflow-hidden">
 <img alt="Mat zwart keukeneiland met granieten werkblad" class="w-full h-full object-cover" src="images/projecten/21-mat-zwart-keukeneiland-met-graniet-werkblad.jpg"/>
 </div>
 </div>
-<div class="reveal reveal-right md:col-span-4 md:col-start-9 mt-8 md:mt-0">
+<div class="reveal reveal-right reveal-now md:col-span-4 md:col-start-9 mt-8 md:mt-0">
 <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4 block">Maatwerk keuken</span>
 <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6">Design keuken mat zwart</h2>
 <a class="inline-flex items-center space-x-2 text-primary hover:text-on-background transition-colors group" href="#">
@@ -256,7 +258,7 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
 <div class="reveal reveal-left md:col-span-5 relative group cursor-pointer">
-<div class="aspect-[2/3] bg-surface-container-low overflow-hidden">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden">
 <img alt="Badkamer met wandbekleding van eiken fineer latten" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="images/projecten/20-wandbekleding-eiken-fineer-latten.jpg"/>
 </div>
 </div>
@@ -374,6 +376,11 @@
             } else {
                 revealEls.forEach(el => el.classList.add('is-visible'));
             }
+
+            // Intro + eerste project meteen samen laten inanimeren bij het laden
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+                document.querySelectorAll('.reveal-now').forEach(el => el.classList.add('is-visible'));
+            }));
 
             // Wissel de achtergrondkleur af tussen de zichtbare projecten
             const restripe = () => {
