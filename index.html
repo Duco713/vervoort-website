@@ -136,13 +136,15 @@
 <img id="logo-light" src="images/logo-vervoort-light.png" alt="Vervoort Interieurbouw" class="h-8 md:h-9 w-auto"/>
 <img id="logo-dark" src="images/logo-vervoort.png" alt="Vervoort Interieurbouw" class="h-8 md:h-9 w-auto hidden"/>
 </a>
-<div class="hidden md:flex gap-8 items-center">
-<a class="nav-item text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-300" href="#diensten">Diensten</a>
-<a class="nav-item text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-300" href="#expertise">Over ons</a>
-<a class="nav-item text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-300" href="#portfolio">Portfolio</a>
-<a class="nav-item text-white font-label-caps text-label-caps hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="nav-item text-white font-label-caps text-[14px] font-semibold tracking-[0.06em] border-b-2 border-transparent pb-1 hover:text-primary transition-all duration-300" href="#diensten">Diensten</a>
+<a class="nav-item text-white font-label-caps text-[14px] font-semibold tracking-[0.06em] border-b-2 border-transparent pb-1 hover:text-primary transition-all duration-300" href="#expertise">Over ons</a>
+<a class="nav-item text-white font-label-caps text-[14px] font-semibold tracking-[0.06em] border-b-2 border-transparent pb-1 hover:text-primary transition-all duration-300" href="#portfolio">Portfolio</a>
+<a class="nav-item text-white font-label-caps text-[14px] font-semibold tracking-[0.06em] border-b-2 border-transparent pb-1 hover:text-primary transition-all duration-300" href="#referenties">Referenties</a>
+<a class="nav-item text-white font-label-caps text-[14px] font-semibold tracking-[0.06em] border-b-2 border-transparent pb-1 hover:text-primary transition-all duration-300" href="#vacatures">Vacatures</a>
+<a class="nav-item text-white font-label-caps text-[14px] font-semibold tracking-[0.06em] border-b-2 border-transparent pb-1 hover:text-primary transition-all duration-300" href="#contact">Contact</a>
 </div>
-<a class="nav-item hidden md:block font-label-caps text-label-caps text-white hover:text-primary transition-colors duration-300" href="tel:+31402027950">+31 (0) 40 2027950</a>
+<a class="nav-item hidden md:block font-label-caps text-[14px] font-semibold tracking-[0.06em] text-white hover:text-primary transition-colors duration-300" href="tel:+31402027950">+31 (0) 40 2027950</a>
 </div>
 </nav>
 <!-- Hero Content -->
@@ -479,32 +481,56 @@
             const navbar = document.querySelector('nav');
             const logoLight = document.getElementById('logo-light');
             const logoDark = document.getElementById('logo-dark');
-            const navItems = navbar.querySelectorAll('.nav-item');
+            const navItems = Array.from(navbar.querySelectorAll('.nav-item'));
 
-            const applyNavState = () => {
-                if (window.scrollY > 50) {
+            // Alleen links die naar een sectie (#id) verwijzen doen mee met de scroll-spy
+            const spyLinks = navItems.filter(a => (a.getAttribute('href') || '').startsWith('#'));
+            const sections = spyLinks
+                .map(a => document.querySelector(a.getAttribute('href')))
+                .filter(Boolean);
+
+            const activeSectionId = () => {
+                const pos = window.scrollY + 140; // hoogte van de nav meenemen
+                let id = null;
+                for (const sec of sections) {
+                    const top = sec.getBoundingClientRect().top + window.scrollY;
+                    if (top <= pos) id = sec.id;
+                }
+                return id;
+            };
+
+            const update = () => {
+                const scrolled = window.scrollY > 50;
+
+                // Balk-achtergrond + logo omwisselen
+                if (scrolled) {
                     navbar.classList.add('bg-background/90', 'backdrop-blur-md', 'ambient-shadow', 'py-4');
                     navbar.classList.remove('bg-transparent', 'py-8');
                     logoLight.classList.add('hidden');
                     logoDark.classList.remove('hidden');
-                    navItems.forEach(el => {
-                        el.classList.remove('text-white');
-                        el.classList.add('text-on-surface');
-                    });
                 } else {
                     navbar.classList.remove('bg-background/90', 'backdrop-blur-md', 'ambient-shadow', 'py-4');
                     navbar.classList.add('bg-transparent', 'py-8');
                     logoLight.classList.remove('hidden');
                     logoDark.classList.add('hidden');
-                    navItems.forEach(el => {
-                        el.classList.add('text-white');
-                        el.classList.remove('text-on-surface');
-                    });
                 }
+
+                // Actieve sectie markeren (alleen wanneer de balk 'licht' is)
+                const activeId = scrolled ? activeSectionId() : null;
+                navItems.forEach(a => {
+                    const isActive = !!activeId && a.getAttribute('href') === '#' + activeId;
+                    a.classList.remove('text-white', 'text-on-surface', 'text-primary', 'border-primary', 'border-transparent');
+                    if (isActive) {
+                        a.classList.add('text-primary', 'border-primary');
+                    } else {
+                        a.classList.add(scrolled ? 'text-on-surface' : 'text-white', 'border-transparent');
+                    }
+                });
             };
 
-            applyNavState();
-            window.addEventListener('scroll', applyNavState, { passive: true });
+            update();
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update);
         });
     </script>
 </body></html>
