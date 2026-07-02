@@ -436,25 +436,83 @@
 </section>
 <!-- 7. FOOTER / CONTACT SECTIE -->
 <footer class="bg-surface-container dark:bg-surface-dim block w-full relative overflow-hidden" id="contact">
-<!-- Paginagrote afsluiting -->
-<div class="py-32 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter items-center max-w-container-max mx-auto border-b border-outline-variant/20">
-<div class="order-2 md:order-1 flex justify-center md:justify-start">
-<!-- Minimalistisch stijlelement placeholder -->
-<div class="w-64 h-80 bg-tertiary-fixed rounded ambient-shadow flex items-center justify-center p-8 relative">
-<div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiAvPgo8cGF0aCBkPSJNMCAwTDggOFpNOCAwTDAgOFoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIwLjUiIC8+Cjwvc3ZnPg==')]"></div>
-<span class="font-label-caps text-label-caps text-on-tertiary-fixed text-center z-10">Minimalistisch<br/>Stijlelement</span>
+<!-- Contact: intro + gegevens + formulier -->
+<div class="py-24 md:py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-b border-outline-variant/20">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-end mb-16 md:mb-24">
+<div>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary block mb-6">Contact</span>
+<h2 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface leading-tight">
+                        HET WAARMAKEN VAN UW DROOMINTERIEUR
+                    </h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant lg:text-right">
+                    Interesse om samen een mooi project te realiseren? Neem vrijblijvend contact met ons op — wij staan graag voor u klaar.
+                </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Gegevens -->
+<div class="lg:col-span-5 flex flex-col gap-10">
+<div>
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-3">Atelier &amp; Kantoor</h3>
+<p class="font-body-md text-body-md text-on-surface">
+                            Vervoort interieurbouw B.V.<br/>
+                            John F. Kennedylaan 28B<br/>
+                            5555 XD Valkenswaard
+                        </p>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-3">Direct contact</h3>
+<ul class="flex flex-col gap-2 font-body-md text-body-md text-on-surface">
+<li><a class="inline-flex items-center gap-2 hover:text-primary transition-colors" href="tel:+31402027950"><span class="material-symbols-outlined text-[18px]">call</span> +31 (0) 40 2027950</a></li>
+<li><a class="inline-flex items-center gap-2 hover:text-primary transition-colors" href="tel:+31653312005"><span class="material-symbols-outlined text-[18px]">smartphone</span> +31 (0) 6 53312005</a></li>
+<li><a class="inline-flex items-center gap-2 hover:text-primary transition-colors" href="mailto:info@vervoortinterieurbouw.nl"><span class="material-symbols-outlined text-[18px]">mail</span> info@vervoortinterieurbouw.nl</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-3">Openingstijden</h3>
+<ul class="flex flex-col gap-1 font-body-md text-body-md text-on-surface max-w-xs">
+<li class="flex justify-between"><span>Ma t/m Do</span><span>7.00 – 17.00 uur</span></li>
+<li class="flex justify-between"><span>Vrijdag</span><span>7.00 – 13.00 uur</span></li>
+</ul>
 </div>
 </div>
-<div class="order-1 md:order-2 text-center md:text-left">
-<h2 class="font-display-lg text-display-lg text-on-surface mb-12">
-                    HET WAARMAKEN VAN UW DROOMINTERIEUR
-                </h2>
-<div class="inline-block border-t border-primary pt-8">
-<span class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Neem contact op</span>
-<a class="font-headline-lg text-headline-lg text-primary hover:text-on-surface transition-colors" href="tel:+31402027950">
-                        +31 (0) 40 2027950
-                    </a>
+<!-- Formulier -->
+<form class="lg:col-span-7 flex flex-col gap-6 bg-surface-container-lowest border border-outline-variant rounded-xl p-8 md:p-10" id="contact-form" novalidate="">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant" for="bedrijfsnaam">Bedrijfsnaam</label>
+<input class="w-full bg-background border border-outline-variant rounded px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="bedrijfsnaam" name="bedrijfsnaam" type="text"/>
 </div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant" for="contactpersoon">Contactpersoon</label>
+<input class="w-full bg-background border border-outline-variant rounded px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="contactpersoon" name="contactpersoon" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant" for="email">E-mail *</label>
+<input class="w-full bg-background border border-outline-variant rounded px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="email" name="email" type="email" required=""/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant" for="telefoon">Telefoonnummer</label>
+<input class="w-full bg-background border border-outline-variant rounded px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="telefoon" name="telefoon" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant" for="onderwerp">Onderwerp</label>
+<input class="w-full bg-background border border-outline-variant rounded px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" id="onderwerp" name="onderwerp" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant" for="bericht">Uw bericht *</label>
+<textarea class="w-full bg-background border border-outline-variant rounded px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-y" id="bericht" name="bericht" rows="5" required=""></textarea>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded font-label-caps text-label-caps uppercase tracking-widest hover:opacity-90 transition-opacity" type="submit">
+                            Verstuur bericht
+                        </button>
+<p class="font-body-md text-body-md text-on-surface-variant hidden" id="form-status">Uw e-mailprogramma wordt geopend om het bericht te versturen.</p>
+</div>
+</form>
 </div>
 </div>
 <!-- Standaard Footer Component -->
@@ -470,9 +528,10 @@
 <a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
 </div>
 </div>
-<div class="font-body-md text-body-md text-on-surface-variant border-t border-outline-variant/20 pt-8">
-                © 2024 Vervoort Interieurbouw. Vakmanschap in elk detail.
-            </div>
+<div class="flex flex-col md:flex-row md:justify-between gap-3 font-body-md text-body-md text-on-surface-variant border-t border-outline-variant/20 pt-8">
+<span>© 2024 Vervoort Interieurbouw. Vakmanschap in elk detail.</span>
+<span>KVK Eindhoven 74559923 &middot; BTW NL859948389B01 &middot; IBAN NL61 RABO 0152.9166.44</span>
+</div>
 </div>
 </footer>
 <!-- Script voor scroll interacties -->
@@ -531,6 +590,33 @@
             update();
             window.addEventListener('scroll', update, { passive: true });
             window.addEventListener('resize', update);
+
+            // Contactformulier: opent het e-mailprogramma met de ingevulde velden
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
+                    const data = new FormData(form);
+                    const val = (k) => (data.get(k) || '').toString().trim();
+                    const onderwerp = val('onderwerp') || 'Contactverzoek via website';
+                    const body =
+                        'Bedrijfsnaam: ' + val('bedrijfsnaam') + '\n' +
+                        'Contactpersoon: ' + val('contactpersoon') + '\n' +
+                        'E-mail: ' + val('email') + '\n' +
+                        'Telefoon: ' + val('telefoon') + '\n\n' +
+                        val('bericht');
+                    const href = 'mailto:info@vervoortinterieurbouw.nl'
+                        + '?subject=' + encodeURIComponent(onderwerp)
+                        + '&body=' + encodeURIComponent(body);
+                    const status = document.getElementById('form-status');
+                    if (status) status.classList.remove('hidden');
+                    window.location.href = href;
+                });
+            }
         });
     </script>
 </body></html>
