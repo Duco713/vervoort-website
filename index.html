@@ -118,7 +118,21 @@
 
         html { scroll-behavior: smooth; }
         section[id], header[id] { scroll-margin-top: 96px; }
+
+        /* Typemachine-effect voor de hero-titel */
+        @keyframes hero-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .pretype #hero-title { visibility: hidden; }
+        #hero-title.typing::after,
+        #hero-title.done::after {
+            content: '|';
+            display: inline-block;
+            margin-left: 0.04em;
+            font-weight: 300;
+        }
+        #hero-title.typing::after { animation: hero-blink 0.8s step-end infinite; }
+        #hero-title.done::after { opacity: 0; }
     </style>
+<script>document.documentElement.classList.add('pretype');</script>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
 <!-- 1. HERO SECTIE met TopNavBar -->
@@ -150,7 +164,7 @@
 <!-- Hero Content -->
 <div class="relative z-10 flex-grow flex items-center justify-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
 <div class="text-center w-full">
-<h1 class="font-display-lg text-display-lg text-on-primary tracking-tighter mix-blend-overlay opacity-90 w-full whitespace-nowrap overflow-hidden text-ellipsis md:text-[120px] lg:text-[180px] leading-none mb-8">
+<h1 id="hero-title" class="font-display-lg text-display-lg text-on-primary tracking-tighter mix-blend-overlay opacity-90 w-full whitespace-nowrap overflow-hidden text-ellipsis md:text-[120px] lg:text-[180px] leading-none mb-8">
                     VERVOORT
                 </h1>
 <div class="mt-12 flex justify-center">
@@ -569,6 +583,25 @@
 <!-- Script voor scroll interacties -->
 <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Typemachine-effect voor de hero-titel VERVOORT
+            (() => {
+                const title = document.getElementById('hero-title');
+                if (!title) return;
+                const full = (title.textContent || '').trim() || 'VERVOORT';
+                document.documentElement.classList.remove('pretype');
+                const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (reduce) { title.textContent = full; return; }
+                title.textContent = '';
+                title.classList.add('typing');
+                let i = 0;
+                const type = () => {
+                    title.textContent = full.slice(0, i);
+                    if (i < full.length) { i++; setTimeout(type, 190); }
+                    else { setTimeout(() => { title.classList.remove('typing'); title.classList.add('done'); }, 1600); }
+                };
+                setTimeout(type, 400);
+            })();
+
             const navbar = document.querySelector('nav');
             const logoLight = document.getElementById('logo-light');
             const logoDark = document.getElementById('logo-dark');
