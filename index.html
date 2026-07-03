@@ -117,6 +117,8 @@
         }
 
         html { scroll-behavior: smooth; }
+        /* Voorkomt een smalle witte strook rechts bij uitzoomen (horizontale overflow afkappen) */
+        html, body { overflow-x: clip; max-width: 100%; }
         section[id], header[id] { scroll-margin-top: 96px; }
 
         /* Typemachine-effect voor de hero-titel */

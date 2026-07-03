@@ -105,6 +105,8 @@
             border-bottom: 2px solid #366284;
             color: #366284;
         }
+        /* Voorkomt een smalle witte strook rechts bij uitzoomen (horizontale overflow afkappen) */
+        html, body { overflow-x: clip; max-width: 100%; }
         /* Scroll-reveal: linkerkolommen komen van links, rechterkolommen van rechts */
         @media (prefers-reduced-motion: no-preference) {
             .reveal-enabled .reveal {
